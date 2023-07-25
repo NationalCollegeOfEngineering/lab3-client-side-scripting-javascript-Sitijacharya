@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .time {
+
+            color: black;
+
+            font-size: xx-large
+        }
+    </style>
+    <title>time</title>
+</head>
+
+<body>
+    <br>
+    <div class="time">
+        <h4 id="time"></h4>
+    </div>
+    <script>
+        function showTime() {
+            document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
+        }
+        setInterval(showTime, 1000);
+    </script>
+</body>
+
+</html>
