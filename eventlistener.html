@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <script src="eventlistener.js"></script>
+    <script>
+        function internalJs() {
+            alert("Hello from internalJs");
+        }
+    </script>
+</head>
+
+<body style="background-color: white;">
+    <button onclick="alert('Hello from inline Js')">
+        click for hello from inlineJs</button><br /><br />
+    <button onclick="internalJs()">click for hello from internalJs</button><br /><br />
+    <button onclick="externalJs()">click for hello from externalJs</button><br /><br />
+    <button onclick="console.log('clicked button')">No alert</button><i> (console logs the message "clicked button")</i><br /><br /><hr><br>
+    Username:
+    <input type="text" id="name" placeholder="Enter your name then ->" />
+    <button onclick="sayHi()">Click to say Hi</button><br /><br><hr><br />
+    <button onclick="changeColorRed()">Change color of body to red</button>
+    <button onclick="changeColorBlue()">Change color of body to blue</button>
+    <button onclick="resetColor()">Reset Body Color</button><br /><br /><hr>
+    <button onclick="divColor()">Change Div 1 Background Color</button><br><br>
+    <div>Div 1</div><hr>
+    <button id="Dynamic">Dynamic 1</button>
+    <script>addDynamicEventListener();</script>
+    <button onclick="dynamicEventTest()">Dynamic 2</button><i> (Displays alert message using Event Listener using getElementById [Dynamic 1] and direct call [Dynamic 2])</i><br /><hr>
+    <button onclick="showHideDiv()">Show or Hide Div 2</button><br><br>
+    <div id="Div2">Div 2</div><hr><br>
+    <button onclick="askconfirm()">Delete</button><i> (Displays a confimation message which if true console logs the message "deleted")</i><br><br><hr>
+    <button onclick="showPrompt()">Prompt Demo</button>
+</body>
+
+</html>
