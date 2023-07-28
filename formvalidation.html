@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <style>
+        #btn {
+            margin-top: 40px;
+        }
+
+        #error {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-box">
+        <fieldset>
+            <legend>Fill the form below</legend>
+            <form action="" method="get" onsubmit="return validForm()">
+                <br><br>
+                <label for="name"> Name: </label>
+                <input type="text" name="name" id="name" onkeyup="validForm()">
+                <br><br>
+                <label for="pwd">Password:</label>
+                <input type="password" name="pw" id="pwd" onkeyup="validForm()">
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" onkeyup="validForm()">
+                <br>
+                <button id="button" type="submit">Submit</button>
+                <br><br>
+                <h5 id="error"></h5>
+            </form>
+        </fieldset>
+
+    </div>
+    <script>
+        function validForm() {
+            var name = document.getElementById('name').value;
+
+            var pw = document.getElementById('pw').value;
+            var email = document.getElementById('email').value;
+            emailRegEx = /^[a-zA-Z0-9]+@+[a-zA-Z]+\.[a-z]{2,3}$/;
+            if (name.length < 4) {
+                err = 'Name must be at least 3 characters';
+                document.getElementById('error').innerHTML = err;
+                return false;
+            }
+            else if (pw.length < 8) {
+                err = 'Password must be at least 8 characters';
+                document.getElementById('error').innerHTML = err;
+                return false;
+            }
+            else if (!emailRegEx.test(email)) {
+                err = 'Email not valid';
+                document.getElementById('error').innerHTML = err;
+                return false;
+            }
+            else {
+                document.getElementById('error').innerHTML = '';
+                return true;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
